@@ -7,6 +7,11 @@ Necessário:
 - Minecraft 1.8  
 - Liteloader
   
+Instalação:  
+1. Baixe o arquivo [.litemod](https://github.com/lomexicano/AutoReconnect-litemod-Minecraft-1.8/releases/tag/mod)  
+2. Coloque na pasta .minecraft/mods
+3. Se você tiver o liteloader instalado, ele será carregado e já estará funcionando ao iniciar o jogo.
+  
 ![contagem regressiva](img/countdown.png)
 ![configuração](img/settings.png)
 
