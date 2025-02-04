@@ -56,7 +56,6 @@ public class LiteModAutoReconnect implements Tickable, Configurable {
             if (!shouldReconnect) {
                 shouldReconnect = true;
                 reconnectStartTime = System.currentTimeMillis();
-                lastServerData = mc.getCurrentServerData(); // Armazena os dados do último servidor
             }
 
             // Calcula o tempo restante com duas casas decimais
@@ -102,6 +101,8 @@ public class LiteModAutoReconnect implements Tickable, Configurable {
         } else if (mc.currentScreen instanceof GuiMainMenu) {
             // Cancela a reconexão se o jogador voltar ao menu principal
             shouldReconnect = false;
+        } else if (mc.currentScreen instanceof GuiConnecting && this.mc.getCurrentServerData() != null) {
+            lastServerData = this.mc.getCurrentServerData();
         }
     }
 
@@ -109,6 +110,7 @@ public class LiteModAutoReconnect implements Tickable, Configurable {
         if (lastServerData != null) {
             // Reconecta ao último servidor
             mc.displayGuiScreen(new GuiConnecting(new GuiMainMenu(), mc, lastServerData));
+
         }
     }
 
